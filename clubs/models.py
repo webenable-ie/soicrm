@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
+from configtables.models import Region
 
 # Create your models here.
 
@@ -8,6 +9,7 @@ from django.db.models.signals import pre_save
 class Club(models.Model):
     name = models.CharField(max_length=250)
     slug = models.SlugField(null=True, blank=True)
+    region = models.ForeignKey(Region, null=True, blank=True,on_delete=None, related_name='clubs')
 
 
     def __str__(self):
