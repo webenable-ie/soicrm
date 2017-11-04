@@ -5,8 +5,20 @@
 
 <div class="container">
     <table class="table">
-        <thead>
-        
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Club</th>
+            </tr>
+        <tbody>
+            {% for obj in object_list %}
+            <tr>
+                <th scope="row">{{ obj.id }}</th>
+                <td>{{ obj.name}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
         </thead>
 
     </table>
